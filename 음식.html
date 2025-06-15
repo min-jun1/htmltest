@@ -1,0 +1,77 @@
+<html>
+<head>
+    <style>
+        body {
+            text-align: center;
+            background-color: #fff8e1; 
+        }
+        .bt {
+            width: 15%;
+            height: 10%;
+            background-color: #ffb74d; 
+            font-size: 1.3em;
+            color: white;
+            font-weight: bold;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+        }
+        .txt {
+            width: 50%;
+            height: 50px;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #c62828; 
+            text-align: center;
+            background-color: #fff3e0;
+            border: 2px solid #c62828;
+            border-radius: 6px;
+        }
+        .hh {
+            font-size: 3em;
+            font-weight: bold;
+            color: #6d4c41; 
+        }
+        #display-img {
+            margin-top: 30px;
+            width: 400px;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid white;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 class="hh">먹어본 음식들*^^*</h1>
+    <input type='text' class="txt" id="txt1" readonly><br><br><br>
+
+    <button class='bt' onclick="showImage('같이나온 브로콜리 튀김이 지린다')">스프카레</button>
+    <button class='bt' onclick="showImage('한밤중에 2시간 기다렸는데 진한 새우탕면 먹고옴ㅡㅡ')">새우라멘</button>
+    <button class='bt' onclick="showImage('양고기는 언제나 옳다')">징기즈칸</button>
+    <button class='bt' onclick="showImage('닭튀김 소스가 특히 맛있었다')">교자와 닭튀김</button>
+    <button class='bt' onclick="clearImage()">맛있었다!</button>
+
+    <br><br>
+    <img id="display-img" src="음식 기본.png" alt="이미지 미리보기">
+
+    <script>
+        var imageMap = {
+            "같이나온 브로콜리 튀김이 지린다": "스프카레.png",
+            "한밤중에 2시간 기다렸는데 진한 새우탕면 먹고옴ㅡㅡ": "새우라멘.png",
+            "양고기는 언제나 옳다": "징기즈칸.png",
+            "닭튀김 소스가 특히 맛있었다": "교자.png"
+        };
+
+        function showImage(name) {
+            document.getElementById('txt1').value = name;
+            document.getElementById('display-img').src = imageMap[name] || "";
+        }
+
+        function clearImage() {
+            document.getElementById('txt1').value = "예약 실수해서 와규 못먹은게 한이다";
+            document.getElementById('display-img').src = "음식 기본.png";
+        }
+    </script>
+</body>
+</html>

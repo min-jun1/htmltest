@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            text-align: center;
+            background-color: #e0f7fa;
+            
+        }
+        h1 {
+            color: #d81b60;
+            font-size: 4em;
+        }
+        .travel-photo {
+            width: 300px;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .label {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        
+        #img1 {
+            width: 500px;
+            height: auto;
+            border-radius: 20px;
+           
+        }
+
+       
+        .side-img {
+            position: absolute;
+            top: 100px;
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .left-img {
+            left: 20px;
+        }
+        .right-img {
+            right: 20px;
+        }
+        .credit {
+            font-size: 0.8em;
+            color: #555;
+            margin-top: 50px;
+            margin-bottom: 20px;
+}
+    </style>
+</head>
+<body>
+    <h1>나의 홋카이도 여행~*^^*</h1>
+
+   
+    <img src="관광지 기본.png" class="side-img left-img">
+    <img src="음식 기본.png" class="side-img right-img">
+
+    
+    <img id="img1" src="샤코탄블루.png"><br>
+
+    
+    <a href='관광지.html'>
+        <img src='청의호수.png' class="travel-photo">
+        <div class="label">관광지</div>
+    </a>
+
+    <a href='음식.html'>
+        <img src='스프카레.png' class="travel-photo"><br>
+        <div class="label">음식</div>
+    </a>
+
+    <script>
+        var step1 = 1;
+
+        setInterval(timer1, 2000);
+
+        function timer1() {
+            switch(step1) {
+                case 1:
+                    document.getElementById('img1').src = '샤코탄블루.png';
+                    step1 = 2;
+                    break;
+                case 2:
+                    document.getElementById('img1').src = '스프카레.png';
+                    step1 = 3;
+                    break;
+                case 3:
+                    document.getElementById('img1').src = '청의호수.png';
+                    step1 = 4;
+                    break;
+                case 4:
+                    document.getElementById('img1').src = '교자.png';
+                    step1 = 5;
+                    break;
+                case 5:
+                    document.getElementById('img1').src = '새우라멘.png';
+                    step1 = 6;
+                    break;
+                case 6:
+                    document.getElementById('img1').src = '오르골당.png';
+                    step1 = 1;
+                    break;
+            }
+        }
+    </script>
+        <!-- 이미지 출처 표시 -->
+    <div class="credit">
+        이미지 출처: <a href="https://www.visit-hokkaido.jp" target="_blank">www.visit-hokkaido.jp</a>, 
+        <a href="https://www.irasutoya.com/" target="_blank">irasutoya.com</a>, 내 앨범
+    </div>
+
+</body>
+</html>
