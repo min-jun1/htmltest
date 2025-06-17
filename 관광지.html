@@ -1,21 +1,26 @@
 <html>
 <head>
     <style>
+        /* 전체 페이지 스타일 설정 */
         body {
-            text-align: center;
-            background-color: yellowgreen; 
+            text-align: center; /* 가운데 정렬 */
+            background-color: yellowgreen; /* 배경색 설정 */
         }
+
+        /* 버튼 스타일 */
         .bt {
             width: 15%;
             height: 10%;
-            background-color: violet; 
+            background-color: violet; /* 버튼 배경색 */
             font-size: 1.3em; 
-            color: white;
+            color: white; /* 글자색 */
             font-weight: bold;
             margin: 5px;
             border: none;
-            border-radius: 8px;
+            border-radius: 8px; /* 모서리 둥글게 */
         }
+
+        /* 텍스트 박스 스타일 */
         .txt {
             width: 60%;
             height: 50px;
@@ -27,35 +32,47 @@
             border: 2px solid #4e342e;
             border-radius: 6px;
         }
+
+        /* 제목 스타일 */
         .hh {
             font-size: 3em;
             font-weight: bold;
             color: green;
         }
+
+        /* 이미지 스타일 */
         #display-img {
             margin-top: 30px;
             width: 400px;
             height: auto;
             border-radius: 10px;
             border: 3px solid white;
-
         }
     </style>
 </head>
 <body>
+    <!-- 페이지 제목 -->
     <h1 class="hh">다녀온 관광지*^^*</h1>
+
+    <!-- 설명 텍스트 박스 (읽기 전용) -->
     <input type='text' class="txt" id="txt1" readonly><br><br><br>
 
+    <!-- 관광지 버튼들 -->
+    <!-- 각 버튼을 클릭하면 showImage 함수가 호출되어 이미지와 텍스트가 바뀜 -->
     <button class='bt' onclick="showImage('오르골 듣고있으면 기분이 뭔가뭔가해짐..')">오르골당</button>
     <button class='bt' onclick="showImage('바다가 진짜 ㅈㄴ파랗다')">샤코탄 블루</button>
     <button class='bt' onclick="showImage('이날이 8월 15일 이었는데 오봉이라는 일본의 명절날이라고 한다..')">오봉 축제</button>
     <button class='bt' onclick="showImage('비가 와서 파란색이 옅어지고 녹색이 섞였는데 이것도 예쁘다')">청의 호수</button>
-    <button class='bt' onclick="clearImage()">즐거웠다!</button>
+    <button class='bt' onclick="clearImage()">즐거웠다!</button> <!-- 초기화 버튼 -->
 
     <br><br>
+
+    <!-- 이미지 출력 영역 -->
     <img id="display-img" src="관광지 기본.png" alt="이미지 미리보기">
 
+    <!-- 자바스크립트 -->
     <script>
+        // 텍스트 설명과 이미지 파일명을 매핑한 객체
         var imageMap = {
             "오르골 듣고있으면 기분이 뭔가뭔가해짐..": "오르골당.png",
             "바다가 진짜 ㅈㄴ파랗다": "샤코탄블루.png",
@@ -63,14 +80,16 @@
             "비가 와서 파란색이 옅어지고 녹색이 섞였는데 이것도 예쁘다": "청의호수.png"
         };
 
+        // 버튼 클릭 시 텍스트와 이미지 변경 함수
         function showImage(name) {
-            document.getElementById('txt1').value = name;
-            document.getElementById('display-img').src = imageMap[name] || "";
+            document.getElementById('txt1').value = name; // 텍스트 박스에 설명 표시
+            document.getElementById('display-img').src = imageMap[name] || ""; // 이미지 변경
         }
 
+        // "즐거웠다!" 버튼 클릭 시 초기 상태로 복원
         function clearImage() {
-            document.getElementById('txt1').value = "아 또가고싶다";
-            document.getElementById('display-img').src = "관광지 기본.png";
+            document.getElementById('txt1').value = "아 또가고싶다"; // 텍스트 초기화
+            document.getElementById('display-img').src = "관광지 기본.png"; // 기본 이미지로 변경
         }
     </script>
 </body>
