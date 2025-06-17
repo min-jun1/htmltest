@@ -2,84 +2,99 @@
 <html>
 <head>
     <style>
+        /* 전체 배경과 텍스트 정렬 */
         body {
             text-align: center;
-            background-color: #e0f7fa;
-            
+            background-color: #e0f7fa; /* 연한 하늘색 배경 */
         }
+
+        /* 제목 스타일 */
         h1 {
-            color: #d81b60;
-            font-size: 4em;
+            color: #d81b60; /* 진한 분홍색 */
+            font-size: 4em; /* 큰 글씨 */
         }
+
+        /* 작은 여행 사진 스타일 */
         .travel-photo {
             width: 300px;
             height: auto;
             margin: 10px;
-            border-radius: 10px;
+            border-radius: 10px; /* 모서리 둥글게 */
         }
+
+        /* 이미지 아래 설명 텍스트 스타일 */
         .label {
             font-size: 1.2em;
             color: #333;
             margin-bottom: 30px;
         }
 
-        
+        /* 중앙 슬라이드 이미지 스타일 */
         #img1 {
             width: 500px;
             height: auto;
             border-radius: 20px;
-           
         }
 
-       
+        /* 좌우 배치되는 이미지 공통 스타일 */
         .side-img {
-            position: absolute;
+            position: absolute; /* 위치 고정 */
             top: 100px;
             width: 200px;
             height: auto;
             border-radius: 10px;
         }
+
+        /* 왼쪽에 배치될 이미지 */
         .left-img {
             left: 20px;
         }
+
+        /* 오른쪽에 배치될 이미지 */
         .right-img {
             right: 20px;
         }
+
+        /* 이미지 출처 텍스트 스타일 */
         .credit {
             font-size: 0.8em;
             color: #555;
             margin-top: 50px;
             margin-bottom: 20px;
-}
+        }
     </style>
 </head>
 <body>
     <h1>나의 홋카이도 여행~*^^*</h1>
 
-   
+    <!-- 양쪽에 장식용 이미지 배치 -->
     <img src="관광지 기본.png" class="side-img left-img">
     <img src="음식 기본.png" class="side-img right-img">
 
-    
+    <!-- 중앙의 자동 전환되는 메인 이미지 -->
     <img id="img1" src="샤코탄블루.png"><br>
 
-    
+    <!-- 관광지 페이지로 연결되는 섹션 -->
     <a href='관광지.html'>
         <img src='청의호수.png' class="travel-photo">
         <div class="label">관광지</div>
     </a>
 
+    <!-- 음식 페이지로 연결되는 섹션 -->
     <a href='음식.html'>
         <img src='스프카레.png' class="travel-photo"><br>
         <div class="label">음식</div>
     </a>
 
+    <!-- 이미지 슬라이드 자바스크립트 -->
     <script>
-        var step1 = 1;
+        var step1 = 1; // 현재 슬라이드 단계를 저장할 변수
 
+        // 2초마다 timer1 함수 실행
         setInterval(timer1, 2000);
 
         function timer1() {
+            // 단계에 따라 이미지 변경, 마지막 단계에서 다시 처음으로
             switch(step1) {
                 case 1:
                     document.getElementById('img1').src = '샤코탄블루.png';
@@ -108,11 +123,12 @@
             }
         }
     </script>
-        <!-- 이미지 출처 표시 -->
+
+    <!-- 이미지 출처 정보 -->
     <div class="credit">
-        이미지 출처: <a href="https://www.visit-hokkaido.jp" target="_blank">www.visit-hokkaido.jp</a>, 
+        이미지 출처: 
+        <a href="https://www.visit-hokkaido.jp" target="_blank">www.visit-hokkaido.jp</a>, 
         <a href="https://www.irasutoya.com/" target="_blank">irasutoya.com</a>, 내 앨범
     </div>
-
 </body>
 </html>
